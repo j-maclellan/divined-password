@@ -1,10 +1,10 @@
 // Assignment Code
 // available characters for password
 
-const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-const number = ['0','1','2','3','4','5','6','7','8','9'];
-const symbol = ['!','@','#','$','%','^','&','*','(',')','_','+','<','>','?','{','}','[',']','~'];
+var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var number = ['0','1','2','3','4','5','6','7','8','9'];
+var symbol = ['!','@','#','$','%','^','&','*','(',')','_','+','<','>','?','{','}','[',']','~'];
 
 
 
@@ -30,25 +30,29 @@ var generatePassword = function() {
     var symYes = confirm("Would you like symbols in your password?");
     var confirms = [];  
     if (upperYes == true) {
-        confirms.concat(upperCase);
+        var addUpper = confirms.concat(upperCase);
+        console.log(addUpper); 
     }
     if (lowerYes == true) {
-      confirms.push(lowerCase);
+        var addLower = confirms.concat(lowerCase); 
+        console.log(addLower);
     }
     if (numYes == true) {
-      confirms.push(number);
+        var addNum = confirms.concat(number);
+        console.log(addNum);
     }
     if (symYes == true) {
-      confirms.push(symbol);
+        var addSym = confirms.concat(symbol);
+        console.log(addSym);
     }
-    // else {
-    //   alert("Please choose at least one parameter");
-    //  return generatePassword();
-    // };
-    var output = "";
+    confirms = confirms.concat(addUpper, addLower, addNum, addSym);
+    console.log(confirms);
+    
 for (var i = 0; i < input; i++) {
+      var output = "";
       output += confirms[Math.floor(Math.random() * input)];
     }
+    console.log(output);
     return output;
 };
   var generateBtn = document.querySelector("#generate");
