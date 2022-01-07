@@ -61,7 +61,7 @@ var generatePassword = function() {
 
     let output = "";
     // for loop to return generated password
-for (i = 1; i < input; i++) {
+for (i = 0; i < input; i++) {
       output += confirms[Math.floor(Math.random() * confirms.length)];
       // log to show password generation
       console.log(output);
